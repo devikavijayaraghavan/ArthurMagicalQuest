@@ -42,8 +42,8 @@ screen main_menu():
             # text button for "PLAY" button + alignment + hover sound
             textbutton "PLAY":
                 action Start()
-                hovered Play("sound", "audio/hover.mp3")
-                activate_sound "audio/hover.mp3"
+                #hovered Play("sound", "audio/hover.mp3")
+                #activate_sound "audio/hover.mp3"
                 text_size 50
                 text_color "#FF0000"
                 text_hover_color "#000000"
@@ -66,8 +66,8 @@ screen main_menu():
             # text button for "HOW TO PLAY" button + alignment + hover sound
             textbutton "HOW TO PLAY":
                 action ShowMenu("how_to")
-                hovered Play("sound", "audio/hover.mp3")
-                activate_sound "audio/hover.mp3"
+                #hovered Play("sound", "audio/hover.mp3")
+                #activate_sound "audio/hover.mp3"
                 text_size 50
                 text_color "#FF0000"
                 text_hover_color "#000000"
@@ -90,8 +90,8 @@ screen main_menu():
             # text button for "QUIT" button + alignment + hover sound
             textbutton "QUIT":
                 action Quit()
-                hovered Play("sound", "audio/hover.mp3")
-                activate_sound "audio/hover.mp3"
+                #hovered Play("sound", "audio/hover.mp3")
+                #activate_sound "audio/hover.mp3"
                 text_size 50
                 text_color "#FF0000"
                 text_hover_color "#000000"
@@ -103,8 +103,23 @@ screen main_menu():
 
 screen how_to():
 
-    add "gui/HowTo.jpeg" 
-    textbutton "Back" action MainMenu()
+    tag menu
+
+    add "gui/HowTo.jpeg":
+        fit "cover"
+        xalign 0.5
+        yalign 0.5
+
+    textbutton "BACK":
+        action ShowMenu("main_menu")
+        hovered Play("sound", "audio/hover.mp3")
+        activate_sound "audio/hover.mp3"
+        text_bold True
+        text_size 40
+        text_color "#4e4157"
+        text_hover_color "#FFFFFF"
+        xalign 0.62
+        yalign 0.85
 
 
 # The game starts here.
