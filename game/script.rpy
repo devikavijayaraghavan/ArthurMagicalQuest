@@ -7,71 +7,99 @@ define buster = Character("Buster")
 screen main_menu():
     tag menu
 
+    # main menu background image
     add "gui/MainMenu.jpg":
         fit "cover"
         xalign 0.5
         yalign 0.5
 
+    # main menu "Arthur" text + alignment
     add "gui/ArthurTitle.png":
         xalign 0.5
         yalign 0.02
 
+    # main menu "Magical Quest" subtext + alignment
     add "gui/MagicalQuestText.png":
         xalign 0.5
         yalign 0.25
 
+    # main menu options all grouped together
     vbox:
-        spacing 20
         xalign 0.5
-        yalign 0.55
+        yalign 0.7
+        spacing 50
 
-        frame:
+        # box button for "PLAY" button + alignment + hover sound
+        button:
+            action Start()
+            hovered Play("sound", "audio/hover.mp3")
+            activate_sound "audio/hover.mp3"
             background "#FF0000"
+            hover_background "#000000"
             padding (4, 4)
             xalign 0.5
 
-            frame:
+            # text button for "PLAY" button + alignment + hover sound
+            textbutton "PLAY":
+                action Start()
+                hovered Play("sound", "audio/hover.mp3")
+                activate_sound "audio/hover.mp3"
+                text_size 50
+                text_color "#FF0000"
+                text_hover_color "#000000"
+                xalign 0.5
+                yalign 0.5
                 background "#000000"
-                padding (100, 10)
+                hover_background "#FF0000"
+                padding (135, 10)
 
-                textbutton "PLAY":
-                    action Start()
-                    text_size 50
-                    text_color "#FF0000"
-                    xalign 0.5
-                    yalign 0.5
-        
-        frame:
+        # box button for "HOW TO PLAY" button + alignment + hover sound
+        button:
+            action ShowMenu("how_to")
+            hovered Play("sound", "audio/hover.mp3")
+            activate_sound "audio/hover.mp3"
             background "#FF0000"
+            hover_background "#000000"
             padding (4, 4)
             xalign 0.5
 
-            frame:
+            # text button for "HOW TO PLAY" button + alignment + hover sound
+            textbutton "HOW TO PLAY":
+                action ShowMenu("how_to")
+                hovered Play("sound", "audio/hover.mp3")
+                activate_sound "audio/hover.mp3"
+                text_size 50
+                text_color "#FF0000"
+                text_hover_color "#000000"
+                xalign 0.5
+                yalign 0.5
                 background "#000000"
-                padding (10, 10)
+                hover_background "#FF0000"
+                padding (20, 10)
 
-                textbutton "HOW TO PLAY":
-                    action ShowMenu("how_to")
-                    text_size 50
-                    text_color "#FF0000"
-                    xalign 0.5
-                    yalign 0.5
-
-        frame:
+        # box button for "QUIT" button + alignment + hover sound
+        button:
+            action Quit()
+            hovered Play("sound", "audio/hover.mp3")
+            activate_sound "audio/hover.mp3"
             background "#FF0000"
+            hover_background "#000000"
             padding (4, 4)
             xalign 0.5
 
-            frame:
+            # text button for "QUIT" button + alignment + hover sound
+            textbutton "QUIT":
+                action Quit()
+                hovered Play("sound", "audio/hover.mp3")
+                activate_sound "audio/hover.mp3"
+                text_size 50
+                text_color "#FF0000"
+                text_hover_color "#000000"
+                xalign 0.5
+                yalign 0.5
                 background "#000000"
-                padding (100, 10)
-            
-                textbutton "QUIT":
-                    action Quit()
-                    text_size 50
-                    text_color "#FF0000"
-                    xalign 0.5
-                    yalign 0.5
+                hover_background "#FF0000"
+                padding (135, 10)
 
 screen how_to():
 
